@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CareSphere</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -16,7 +16,7 @@
 <!-- Navigation Bar -->
 <nav class="navbar navbar-light navbar-expand-lg fixed-top" style="background: linear-gradient(to right, #bddcf2, #6ca8f1); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#" style="display: flex; align-items: center;">
+        <a class="navbar-brand" href="index.htm" style="display: flex; align-items: center;">
             <img src="/Img/1.png" class="logo" style="height: 60px; width: 60px;">
             <b style="font-size: 35px; color: #000; font-family: 'Poppins', sans-serif; margin-left: 10px;">CareSphere</b>
         </a>
@@ -151,6 +151,39 @@
             </form>
         </div>
     </div>
+</div>
+
+
+<!-- Appoint us -->
+<label for="appointmentCheckbox" class="floating-button" style="font-weight: bolder;">RESERVE SPOT</label>
+<input type="checkbox" id="appointmentCheckbox">
+<div id="appointmentSection" class="appointment-section m-5">
+    <h2 style="color: black;">Reserve Your Ticket</h2>
+    <form>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <select required>
+            <option value="">Select Department</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Neurology">Neurology</option>
+            <option value="Orthopedics">Orthopedics</option>
+            <option value="Paediatrics">Paediatrics</option>
+            <option value="Obgyn">Obstetrics and Gynecology</option>
+            <option value="Oncology">Oncology</option>
+            <option value="Gastroenterology">Gastroenterology</option>
+            <option value="Dermatology">Dermatology</option>
+            <option value="Ent">ENT</option>
+            <option value="Pulmonology">Pulmonology</option>
+            <option value="Nephrology">Nephrology</option>
+            <option value="Urology">Urology</option>
+            <option value="Endocrinology">Endocrinology</option>
+            <option value="Dental">Dental</option>
+            <option value="Generalsurgery">General Surgery</option>
+        </select>
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Book Your Ticket</button>
+    </form>
 </div>
 
 <!-- body start -->
@@ -339,207 +372,12 @@
             </div>
 
     </div>
-
-    <br>
-
-    <div class="row g-4">
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="/Img/13.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Pediatrics</h5>
-                        <hr>
-                        <p class="card-text">Pediatrics is dedicated to the health and medical care of infants, children, and adolescents.</p>
-                        <a href="#" class="btn btn-info btn-block shadow-none" style="color: white;">Click here to know more</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="/Img/14.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Obstetrics and Gynecology</h5>
-                        <hr>
-                        <p class="card-text">This specialty focuses on childbirth and the care of women giving birth.</p>
-                        <a href="#" class="btn btn-info btn-block shadow-none" style="color: white;">Click here to know more</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="/Img/15.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Oncology</h5>
-                        <hr>
-                        <p class="card-text">Oncology is the study and treatment of tumors, especially cancer.</p>
-                        <a href="#" class="btn btn-info btn-block shadow-none" style="color: white;">Click here to know more</a>
-                    </div>
-                </div>
-            </div>
-
-    </div>
-
-    <br>
-
-    <div class="row g-4">
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="/Img/16.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Gastroenterology</h5>
-                        <hr>
-                        <p class="card-text">Gastroenterology deals with disorders of the stomach and intestines.</p>
-                        <a href="#" class="btn btn-info btn-block shadow-none" style="color: white;">Click here to know more</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="/Img/17.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Dermatology</h5>
-                        <hr>
-                        <p class="card-text">Dermatology involves the treatment of skin disorders and skin care also.</p>
-                        <a href="#" class="btn btn-info btn-block shadow-none" style="color: white;">Click here to know more</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="/Img/18.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">ENT (Ear, Nose, and Throat)</h5>
-                        <hr>
-                        <p class="card-text">This field focuses on disorders of the ear, nose, and throat.</p>
-                        <a href="#" class="btn btn-info btn-block shadow-none" style="color: white;">Click here to know more</a>
-                    </div>
-                </div>
-            </div>
-
-    </div>
-
-    <br>
-
-    <div class="row g-4">
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="/Img/19.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Pulmonology</h5>
-                        <hr>
-                        <p class="card-text">Pulmonology focuses on diseases of the respiratory tract of a human body.</p>
-                        <a href="#" class="btn btn-info btn-block shadow-none" style="color: white;">Click here to know more</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="/Img/20.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Nephrology</h5>
-                        <hr>
-                        <p class="card-text">Nephrology concerns the study and treatment of kidney diseases.</p>
-                        <a href="#" class="btn btn-info btn-block shadow-none" style="color: white;">Click here to know more</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="/Img/21.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Urology</h5>
-                        <hr>
-                        <p class="card-text">Urology focuses on diseases of the urinary tract and the male reproductive organs.</p>
-                        <a href="#" class="btn btn-info btn-block shadow-none" style="color: white;">Click here to know more</a>
-                    </div>
-                </div>
-            </div>
-
-    </div>
-
-    <br>
-
-    <div class="row g-4">
-
-    <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="/Img/22.jpg" class="card-img-top">
-    <div class="card-body">
-                        <h5 class="card-title">Endocrinology</h5>
-                        <hr>
-                        <p class="card-text">Endocrinology studies the glands and hormones of the body and their related disorders.</p>
-                        <a href="#" class="btn btn-info btn-block shadow-none" style="color: white;">Click here to know more</a>
-    </div>
-    </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="/Img/24.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Psychiatry</h5>
-                        <hr>
-                        <p class="card-text">Psychiatry deals with the diagnosis and treatment of mental health disorders.</p>
-                        <a href="#" class="btn btn-info btn-block shadow-none" style="color: white;">Click here to know more</a>
-                    </div>
-                </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6">
-                <div class="card">
-                    <img src="/Img/23.jpg" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">General Surgery</h5>
-                        <hr>
-                        <p class="card-text">General surgery involves the surgical treatment of a variety of conditions and organs.</p>
-                        <a href="#" class="btn btn-info btn-block shadow-none" style="color: white;">Click here to know more</a>
-                    </div>
-                </div>
-    </div>
-
-    </div>
 </div><br><br>
+<center>
+<button class="seemore" role="button"><b style="font-weight: bolder;"><a style="color: white;text-decoration: none;" href="cat.html">Click here to see more</a></b></button>
+</center>
+<br>
 
-<!-- Appoint us -->
-<label for="appointmentCheckbox" class="floating-button" style="font-weight: bolder;">APPOINTMENT WITH US</label>
-<input type="checkbox" id="appointmentCheckbox">
-<div id="appointmentSection" class="appointment-section m-5">
-    <h2 style="color: black;">Make an Appointment</h2>
-    <form>
-        <input type="text" placeholder="Full Name" required>
-        <input type="email" placeholder="Email" required>
-        <input type="tel" placeholder="Phone Number" required>
-        <select required>
-            <option value="">Select Department</option>
-            <option value="cardiology">Cardiology</option>
-            <option value="neurology">Neurology</option>
-            <option value="orthopedics">Orthopedics</option>
-            <option value="pediatrics">Pediatrics</option>
-            <option value="obgyn">Obstetrics and Gynecology</option>
-            <option value="oncology">Oncology</option>
-            <option value="gastroenterology">Gastroenterology</option>
-            <option value="dermatology">Dermatology</option>
-            <option value="ent">ENT</option>
-            <option value="pulmonology">Pulmonology</option>
-            <option value="nephrology">Nephrology</option>
-            <option value="urology">Urology</option>
-            <option value="endocrinology">Endocrinology</option>
-            <option value="psychiatry">Psychiatry</option>
-            <option value="generalsurgery">General Surgery</option>
-        </select>
-        <textarea rows="4" placeholder="Your Message" required></textarea>
-        <button type="submit">Book Appointment</button>
-    </form>
-</div>
 
 <!-- Doctor -->
 <center><h1 style="color: black;">OUR DOCTORS</h1></center><br><br>
@@ -567,7 +405,7 @@
         </div>
     </div>
     <div class="doccard">
-        <div class="card-front" style="background-image: url('/Img/25.jpg');">
+        <div class="card-front" style="background-image: url('/Img/27.jpg');">
             <div class="card-content">
                 <h2 class="doctor-name">DR. DIBYA RANJAN BEHERA</h2>
             </div>
@@ -575,44 +413,12 @@
         <div class="card-back">
             <h2>DR. DIBYA RANJAN BEHERA</h2>
             <p>Cardiologist</p>
-        </div>
-    </div>
-    <div class="doccard">
-        <div class="card-front" style="background-image: url('/Img/26.jpg');">
-            <div class="card-content">
-                <h2 class="doctor-name">DR. PRADYUT RANJAN BHUYAN</h2>
-            </div>
-        </div>
-        <div class="card-back">
-            <h2>DR. PRADYUT RANJAN BHUYAN</h2>
-            <p>Neurologiest</p>
-        </div>
-    </div>
-    <div class="doccard">
-        <div class="card-front" style="background-image: url('/Img/25.jpg');">
-            <div class="card-content">
-                <h2 class="doctor-name">DR. DIBYA RANJAN BEHERA</h2>
-            </div>
-        </div>
-        <div class="card-back">
-            <h2>DR. DIBYA RANJAN BEHERA</h2>
-            <p>Cardiologist</p>
-        </div>
-    </div>
-    <div class="doccard">
-        <div class="card-front" style="background-image: url('/Img/26.jpg');">
-            <div class="card-content">
-                <h2 class="doctor-name">DR. PRADYUT RANJAN BHUYAN</h2>
-            </div>
-        </div>
-        <div class="card-back">
-            <h2>DR. PRADYUT RANJAN BHUYAN</h2>
-            <p>Neurologiest</p>
         </div>
     </div>
 </div><br>
-<center><button class="seemore" role="button"><b style="font-weight: bolder;">See More</b></button></center>
-<br><br>
+<center>
+    <button class="seemore" role="button"><b style="font-weight: bolder;"><a style="color: white;text-decoration: none;" href="doc.html">Click here to see more</a></b></button>
+</center><br><br>
 
 <!-- Gallery -->
 <center><h1 id="gallery" style="color: black;">GALLERY</h1></center><br>

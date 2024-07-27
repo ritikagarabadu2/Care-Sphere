@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6dd5ed, #2193b0);
+            margin: 0;
+            padding: 0;
+        }
+
+        .background {
+            background: url('Img/doc_bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            filter: blur(5px);
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-card, .appointment-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .profile-info h2 {
+            margin: 0;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .profile-info p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .tab {
+            background: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+            margin: 5px;
+        }
+
+        .tab:hover {
+            background: #f0f0f0;
+        }
+
+        .tab.active {
+            background: #2193b0;
+            color: #fff;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .date-slider {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .date-slider div {
+            background: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin: 5px;
+        }
+
+        .date-slider div:hover {
+            background: #f0f0f0;
+        }
+
+        .date-slider div.active {
+            background: #2193b0;
+            color: #fff;
+        }
+
+        .time-slots {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .time-slots div {
+            background: #fff;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin: 5px;
+        }
+
+        .time-slots div:hover {
+            background: #f0f0f0;
+        }
+
+        .time-slots div.selected {
+            background: #2193b0;
+            color: #fff;
+        }
+
+        .booking-footer {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .booking-footer button {
+            background: #2193b0;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background 0.3s ease;
+        }
+
+        .booking-footer button:hover {
+            background: #1a73e8;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <div class="profile-card">
+            <img src="Img/25.jpg" alt="Doctor Profile Picture">
+            <div class="profile-info">
+                <h2>Dr. Dibya Ranjan Behera</h2>
+                <p>Consultant - Cardiologist</p>
+                <p>MBBS | MD (General Medicine) | DM (Cardiology)</p>
+            </div>
+            <div class="tabs">
+                <div class="tab active" onclick="showTab(event, 'overview')">Overview</div>
+                <div class="tab" onclick="showTab(event, 'fellowship')">Fellowship & Membership</div>
+                <div class="tab" onclick="showTab(event, 'expertise')">Field of Expertise</div>
+                <div class="tab" onclick="showTab(event, 'languages')">Languages Spoken</div>
+                <div class="tab" onclick="showTab(event, 'awards')">Awards & Achievements</div>
+                <div class="tab" onclick="showTab(event, 'publications')">Talks & Publications</div>
+            </div>
+            <div id="overview" class="tab-content active">
+                <h3>Overview</h3>
+                <p>Dr. Dibya Ranjan Behera is a distinguished consultant cardiologist and is renowned for his excellence and expertise in the field. He brings forth a wealth of knowledge and experience to patient care at Manipal Hospitals, Bhubaneswar, Odisha. With over 15 years of experience in the field, Dr. Behera completed his medical degree from Utkal University, Orissa, followed by a Doctor of Medicine (MD) in General Medicine from Banaras Hindu University. He further enriched his expertise by obtaining a Doctorate of Medicine (DM) at the Sree Chitra Tirunal Institute for Medical Sciences and Technology, Trivandrum, and earning a fellowship from the Society for Cardiovascular Angiography and Interventions (FSCAI).</p>
+                <p>Dr. Behera has served at numerous esteemed medical and academic institutions, dedicating himself to acquiring advanced knowledge in his field. His expertise spans a wide range of intricate cardiac procedures and interventions, enabling him to provide top-notch care to his patients.</p>
+            </div>
+            <div id="fellowship" class="tab-content">
+                <h3>Fellowship & Membership</h3>
+                <p>Details about fellowship and membership...</p>
+            </div>
+            <div id="expertise" class="tab-content">
+                <h3>Field of Expertise</h3>
+                <p>Details about field of expertise...</p>
+            </div>
+            <div id="languages" class="tab-content">
+                <h3>Languages Spoken</h3>
+                <p>Details about languages spoken...</p>
+            </div>
+            <div id="awards" class="tab-content">
+                <h3>Awards & Achievements</h3>
+                <p>Details about awards and achievements...</p>
+            </div>
+            <div id="publications" class="tab-content">
+                <h3>Talks & Publications</h3>
+                <p>Details about talks and publications...</p>
+            </div>
+        </div>
+        <div class="appointment-card">
+            <h3>Book an appointment for Consultation</h3>
+            <div class="filter-section">
+                <button onclick="checkAvailability()">Check Availability</button>
+            </div>
+            <div class="date-slider" id="date-slider">
+                <!-- Dates will be generated dynamically -->
+            </div>
+            <div class="time-slots" id="time-slots">
+                <h4>Available Time Slots</h4>
+                <!-- Time slots will be generated dynamically -->
+            </div>
+            <div class="booking-footer">
+                <button onclick="bookAppointment()">Book Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show and hide tab content
+        function showTab(event, tabName) {
+            const tabs = document.getElementsByClassName('tab-content');
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            document.getElementById(tabName).classList.add('active');
+            const tabButtons = document.getElementsByClassName('tab');
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            event.currentTarget.classList.add('active');
+        }
+    
+        // Check availability and generate dates
+        function checkAvailability() {
+            const dateSlider = document.getElementById('date-slider');
+            dateSlider.innerHTML = '';
+            const currentDate = new Date();
+            for (let i = 0; i < 7; i++) {
+                const date = new Date(currentDate);
+                date.setDate(currentDate.getDate() + i);
+                const dateString = date.toISOString().split('T')[0];
+                const dateDiv = document.createElement('div');
+                dateDiv.textContent = date.toDateString();
+                dateDiv.onclick = () => selectDate(dateDiv, dateString);
+                dateSlider.appendChild(dateDiv);
+            }
+            dateSlider.children[0].classList.add('active');
+            generateTimeSlots(dateSlider.children[0].textContent);
+        }
+    
+        // Select a date
+        function selectDate(selectedDateDiv, dateString) {
+            const dates = document.querySelectorAll('.date-slider div');
+            dates.forEach(date => date.classList.remove('active'));
+            selectedDateDiv.classList.add('active');
+            generateTimeSlots(dateString);
+        }
+    
+        // Generate time slots
+        function generateTimeSlots(dateString) {
+            const timeSlots = document.getElementById('time-slots');
+            timeSlots.innerHTML = '';
+            timeSlots.style.display = 'flex';
+            const times = ['9:00 AM', '10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'];
+            times.forEach(time => {
+                const timeSlot = document.createElement('div');
+                timeSlot.textContent = time;
+                timeSlot.classList.add('time-slot');
+                timeSlot.onclick = () => selectTimeSlot(timeSlot);
+                timeSlots.appendChild(timeSlot);
+            });
+        }
+    
+        // Select a time slot
+        function selectTimeSlot(selectedTimeSlot) {
+            const timeSlots = document.querySelectorAll('.time-slot');
+            timeSlots.forEach(slot => slot.classList.remove('selected'));
+            selectedTimeSlot.classList.add('selected');
+        }
+    
+        // Initialize by checking availability
+        checkAvailability();
+    </script>
+</body>
+</html>

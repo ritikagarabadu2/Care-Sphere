@@ -53,6 +53,26 @@ body {
 .navbar-brand .logo {
     margin-right: 10px;
 }
+/* @media (max-width: 768px) {
+    .navbar {
+        display: block;
+    }
+}
+@media (max-width: 480px) {
+    .navbar {
+        display: block;
+    }
+}
+@media (max-width: 768px) {
+    .navbar-toggler{
+        max-width: fit-content;
+    }
+}
+@media (max-width: 480px) {
+    .navbar-toggler{
+        max-width: fit-content;
+    }
+} */
 
 /* Modals */
 
@@ -90,18 +110,39 @@ body {
 
 .homecontainer {
     background: linear-gradient(145deg, #e0eafc, #cfdef3);
-    padding: 40px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     margin-left: 50px;
     margin-right: 50px;
 }
+#photoSlider .carousel-inner {
+    width: 100%;
+    max-width: 600px; /* You can adjust this max-width as needed */
+    margin: auto;
+    border-radius: 20px;
+}
 #photoSlider .carousel-inner img {
-    border-radius: 50px;
-    height: 500px;
-    width: 600px;
+    border-radius: 15px;
+    height: 400px;
+    width: 100%;
+    /* max-width: 400px;
+    max-height: 500px; */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin-left: 30px;
+    margin-left: 0px;
+    display: block;
+    justify-content: center;
+}
+@media (max-width: 768px) {
+    #photoSlider .carousel-item img {
+        max-height: auto;
+    }
+}
+@media (max-width: 480px) {
+    #photoSlider .carousel-item img {
+        max-height: 200px;
+        display: block;
+    }
 }
 .title {
     font-size: 2.5rem;
@@ -206,16 +247,50 @@ body {
 }
 
 /* search div */
+.dropdown {
+    flex: 1 1 200px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    flex: 1 1 100px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.search-button i {
+    margin-right: 5px;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .dropdown, .search-button {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .dropdown, .search-button {
+        flex: 1 1 100%;
+        font-size: 14px;
+    }
+}
 
 .selection-container {
     display: flex;
-    align-items: center;
+    
     background: linear-gradient(135deg, rgba(152, 209, 255, 0.9), rgba(240, 240, 240, 0.9)); /* Gradient background */
     padding: 20px 30px;
     border-radius: 15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
     border: 1px solid #ccc;
-    margin-left: 150px;
+
     justify-content: space-between;
     justify-content: center;
     justify-content: space-around;
@@ -225,6 +300,13 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
 }
 .selection-container:hover {
     transform: scale(1.02);
@@ -548,12 +630,18 @@ body {
         align-items: center;
     }
 }
+@media (max-width: 480px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
 
 /* see more button */
 
 .seemore {
     all: unset;
-    width: 100px;
+    width: 150px;
     height: 30px;
     font-size: 16px;
     background: transparent;

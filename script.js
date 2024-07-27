@@ -14,7 +14,7 @@ function animateValue(id, start, end, duration) {
     }, stepTime);
 }
 
-// Continuously increment numbers
+// Counter increment logic
 let patientCount = 0;
 let doctorCount = 0;
 let ambulCount = 4;
