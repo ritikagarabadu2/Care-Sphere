@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM2T8j8AWJrBfpXg1tN5vAXb13qF3AGQww79mA8" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image:linear-gradient(to right, #bddcf2, #6ca8f1);
+            animation: backgroundFade 5s infinite alternate;
+        }
+        @keyframes backgroundFade {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+            width: 90%;
+            max-width: 700px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2em;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #6ca8f1;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        form > div {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #555;
+        }
+        input[type="text"], input[type="tel"], input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus, input[type="tel"]:focus, input[type="number"]:focus {
+            border-color: #74ebd5;
+            outline: none;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        .actions {
+            text-align: center;
+        }
+        .button-group {
+            display: flex;
+            gap: 5px; /* Adjust the gap between buttons as needed */
+            box-shadow: none;
+        }
+        .actions button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            display: block;
+            margin-right: 5px;
+            padding: 10px 20px;
+            box-shadow: none;
+        }
+        .actions button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        .actions button.add-new.clicked {
+            background-color: #218838;
+            color: #fff;
+        }
+        .actions button.remove.clicked {
+            background-color: #dc3545;
+            color: #fff;
+        }
+        .add-new {
+            background-color: #28a745;
+        }
+        .add-new:hover {
+            background-color: #218838;
+        }
+        .remove {
+            background-color: #dc3545;
+        }
+        .remove:hover {
+            background-color: #c82333;
+        }
+        .total-amount {
+            text-align: right;
+            padding: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            background-color: #f2f2f2;
+            border-radius: 5px;
+        }
+        .proceed {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .proceed button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .proceed button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .proceed button:active {
+            background-color: #004080;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Information</h1>
+        <form>
+            <div>
+                <label for="patientName">Patient Name:</label>
+                <input type="text" id="patientName" name="patientName" required>
+            </div>
+            <div>
+                <label for="contactNo">Contact No.:</label>
+                <input type="tel" id="contactNo" name="contactNo" required>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Department Name</th>
+                        <th>Doctor Name</th>
+                        <th>Fees</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="paymentTable">
+                    <tr>
+                        <td><input type="text" name="departmentName[]" required></td>
+                        <td><input type="text" name="doctorName[]" required></td>
+                        <td><input type="number" name="fees[]" class="fee-input" required></td>
+                        <td class="actions">
+                            <div class="button-group">
+                                <button type="button" class="add-new"><i class="fas fa-plus"></i></button>
+                                <button type="button" class="remove"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="total-amount">
+                Total Amount: <span id="totalAmount">0</span>
+            </div>
+            <div class="proceed">
+                <a href="payment_gateway.html" class="btn btn-primary btn-lg" role="button">
+                    Proceed
+                </a>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const paymentTable = document.getElementById('paymentTable');
+            const totalAmountElement = document.getElementById('totalAmount');
+
+            function updateTotalAmount() {
+                const feeInputs = document.querySelectorAll('.fee-input');
+                let totalAmount = 0;
+                feeInputs.forEach(input => {
+                    totalAmount += parseFloat(input.value) || 0;
+                });
+                totalAmountElement.innerText = totalAmount.toFixed(2);
+            }
+
+            function addRow() {
+                const newRow = document.createElement('tr');
+                newRow.innerHTML = `
+                    <td><input type="text" name="departmentName[]" required></td>
+                    <td><input type="text" name="doctorName[]" required></td>
+                    <td><input type="number" name="fees[]" class="fee-input" required></td>
+                    <td class="actions">
+                        <div class="button-group">
+                            <button type="button" class="btn btn-success add-new"><i class="fas fa-plus"></i></button>
+                            <button type="button" class="btn btn-danger remove"><i class="fas fa-trash"></i></button>
+                        </div>
+                    </td>
+
+                `;
+                paymentTable.appendChild(newRow);
+                updateTotalAmount();
+            }
+
+            paymentTable.addEventListener('click', function (event) {
+                if (event.target.classList.contains('add-new') || event.target.closest('.add-new')) {
+                addRow();
+                event.target.closest('.add-new').classList.add('clicked');
+                setTimeout(() => {
+                    event.target.closest('.add-new').classList.remove('clicked');
+                }, 500);
+            } else if (event.target.classList.contains('remove') || event.target.closest('.remove')) {
+                event.target.closest('tr').remove();
+                updateTotalAmount();
+                event.target.closest('.remove').classList.add('clicked');
+                setTimeout(() => {
+                    event.target.closest('.remove').classList.remove('clicked');
+                }, 500);
+            }
+            });
+
+
+
+            paymentTable.addEventListener('input', function (event) {
+                if (event.target.classList.contains('fee-input')) {
+                    updateTotalAmount();
+                }
+            });
+
+            updateTotalAmount();
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

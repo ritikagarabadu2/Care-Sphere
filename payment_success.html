@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Success</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM2T8j8AWJrBfpXg1tN5vAXb13qF3AGQww79mA8" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+        }
+        h1 {
+            color: #28a745;
+        }
+        p {
+            font-size: 1.2em;
+            color: #333;
+        }
+        .download-button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back a {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.3s;
+            text-decoration: none;
+        }
+        .back a:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .back a:active {
+            background-color: #004080;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Payment Successful!</h1>
+        <p>Your payment has been processed successfully. Thank you!</p>
+        <button class="download-button" onclick="downloadInvoice()">Download Invoice</button><br><br>
+        <div class="back">
+        <a href="index.htm" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Back to Home Page</a></div><br>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script>
+        async function downloadInvoice() {
+            try {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+
+                // Set PDF Background Color
+                doc.setFillColor('#f2f2f2'); // Light gray background
+                doc.rect(0, 0, doc.internal.pageSize.width, doc.internal.pageSize.height, 'F');
+
+                // Add Hospital Logo from URL
+                const logoUrl = 'Img/1.png'; // Replace with your logo URL
+                doc.addImage(logoUrl, 'PNG', 10, 10, 27, 20);
+
+                // Add Hospital Name 
+                doc.setFontSize(24);
+                doc.setFont('Arial', 'bold');
+                doc.setTextColor('#007bff'); // Blue color for the hospital name
+                doc.text('CareSphere', 60, 20);
+
+                // Add a Watermark
+                doc.setTextColor(200, 200, 200);
+                doc.setFontSize(80);
+                doc.text('CareSphere', 105, 150, { angle: 45, align: 'center' });
+
+                // Add a Stylish Header
+                doc.setFontSize(16);
+                doc.setFont('Arial', 'normal');
+                doc.setTextColor('#333');
+                doc.text('Invoice', 20, 40);
+                doc.setLineWidth(1.5);
+                doc.setDrawColor('#007bff');
+                doc.line(20, 45, 190, 45); // Blue line under header
+
+                // Add Invoice Details with Styling
+                doc.setFontSize(14);
+                doc.setTextColor('#555');
+                doc.text('Patient Name:', 20, 60);
+                doc.text('Contact No.:', 20, 70);
+                doc.text('Department:', 20, 80);
+                doc.text('Doctor Name:', 20, 90);
+                doc.text('Fees:', 20, 100);
+                doc.text('Total Amount:', 20, 110);
+
+                // Add Data (Static Example)
+                doc.setFontSize(14);
+                doc.setTextColor('#000');
+                doc.text('Ritika Garabadu', 80, 60);
+                doc.text('+91 - 8457082221', 80, 70);
+                doc.text('Cardiology', 80, 80);
+                doc.text('Dr. Divya Ranjan Behera', 80, 90);
+                doc.text('1000 /-', 80, 100);
+                doc.text('1000 /-', 80, 110);
+
+                // Add a Stylish Border and Grid
+                doc.setDrawColor('#007bff'); // Blue color for grid lines
+                doc.setLineWidth(1);
+                doc.rect(10, 50, 188, 70); // Border around the table
+
+                // Add Footer with Contact Info
+                doc.setFontSize(12);
+                doc.setTextColor('#333');
+                doc.text('Thank you for choosing CareSphere. For any inquiries, please contact us at contact@caresphere.com.', 20, 275);
+                doc.text('1234 Medical Plaza, Suite 100, City, State, ZIP', 20, 285);
+
+                // Save the PDF
+                doc.save('invoice.pdf');
+            } catch (error) {
+                console.error('Error generating PDF:', error);
+            }
+        }
+    </script>
+</body>
+</html>
